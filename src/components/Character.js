@@ -10,11 +10,11 @@ margin-right:20rem;
 margin-top:1rem;
 margin-bottom:1rem;
 padding:1rem;
-border: 1em double ${props => props.theme.secondaryColor}
+border: 1em double ${props => props.theme.secondaryColor};
 `
 const StyledCharacterDetails = styled.div`
 background-color: ${props => props.theme.tertiaryColor};
-border: 1em ridge ${props=>props.theme.tertiaryColor}
+border: 1em ridge ${props=>props.theme.tertiaryColor};
 `
 
 export default function Character({info, action}){
