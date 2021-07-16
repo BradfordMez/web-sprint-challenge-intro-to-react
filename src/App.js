@@ -2,19 +2,11 @@ import axios from 'axios';
 import { response } from 'msw';
 import React,{useState, useEffect} from 'react';
 import './App.css';
-import CharacterData from './CharacterDetails';
 import Character from './components/Character';
 
 const App = () => {
   const [data, setData] = useState([])
   const [character, setCharacter] = useState(null)
-
-  const openDetails = id => {
-    setCharacter(id)
-  }
-  const closeDetails =()=>{
-    setCharacter(null)
-  }
 
 
   useEffect(()=>{
@@ -36,12 +28,9 @@ const App = () => {
     <div className="App">
       <h1 className="Header">Characters</h1>
       {
-        data.map((character)=>{
-          return <Character key ={character.id} info={character} action={openDetails}/>
+        data.map((char, i)=>{
+          return <Character key={i} info={char}/>
         })
-      }
-      {
-        character && <CharacterData characterID={character} close={closeDetails}/>
       }
     </div>
   );
